@@ -1,0 +1,281 @@
+Isolate index.iso:
+
+    The following definitions are used:
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 53: index.impl.def8
+
+    The following properties are to be checked:
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 32: index.spec.prop3 ... PASS
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 4: index.spec.transitivity ... PASS
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 5: index.spec.antisymmetry ... PASS
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 6: index.spec.totality ... PASS
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 11: index.spec.prop1 ... PASS
+
+Isolate nonce.iso:
+
+    The following definitions are used:
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 53: nonce.impl.def8
+
+    The following properties are to be checked:
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 32: nonce.spec.prop3 ... PASS
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 4: nonce.spec.transitivity ... PASS
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 5: nonce.spec.antisymmetry ... PASS
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 6: nonce.spec.totality ... PASS
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 11: nonce.spec.prop1 ... PASS
+
+    The following action implementations are present:
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 56: implementation of nonce.next
+
+    The following action monitors are present:
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 36: monitor of nonce.next
+
+    The following program assertions are treated as guarantees:
+        in action nonce.next when called from the environment:
+            /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 37: guarantee ... PASS
+            /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 38: guarantee ... PASS
+
+Isolate this:
+
+    The following properties are assumed as axioms:
+        tiks_no_simp.ivy: line 11: quorum_intersection
+
+    The following properties are to be checked:
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 32: index.spec.prop3  [assumed]
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 4: index.spec.transitivity  [assumed]
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 5: index.spec.antisymmetry  [assumed]
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 6: index.spec.totality  [assumed]
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 11: index.spec.prop1  [assumed]
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 32: nonce.spec.prop3  [assumed]
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 4: nonce.spec.transitivity  [assumed]
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 5: nonce.spec.antisymmetry  [assumed]
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 6: nonce.spec.totality  [assumed]
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 11: nonce.spec.prop1  [assumed]
+
+    The inductive invariant consists of the following conjectures:
+        tiks_no_simp.ivy: line 218: invar63
+        tiks_no_simp.ivy: line 219: safety
+        tiks_no_simp.ivy: line 220: invar64
+        tiks_no_simp.ivy: line 221: invar65
+        tiks_no_simp.ivy: line 222: invar66
+        tiks_no_simp.ivy: line 223: invar67
+        tiks_no_simp.ivy: line 224: invar68
+        tiks_no_simp.ivy: line 225: invar69
+        tiks_no_simp.ivy: line 226: invar70
+        tiks_no_simp.ivy: line 227: invar71
+
+    The following action implementations are present:
+        tiks_no_simp.ivy: line 106: implementation of node_crash
+        tiks_no_simp.ivy: line 130: implementation of node_recover
+        tiks_no_simp.ivy: line 151: implementation of nonce_increase
+        tiks_no_simp.ivy: line 172: implementation of rec_send_confirm_store
+        tiks_no_simp.ivy: line 163: implementation of rec_send_store
+        tiks_no_simp.ivy: line 187: implementation of rec_store_success
+        tiks_no_simp.ivy: line 87: implementation of reply_confirm_store
+        tiks_no_simp.ivy: line 67: implementation of reply_store
+        tiks_no_simp.ivy: line 75: implementation of send_confirm_store
+        tiks_no_simp.ivy: line 116: implementation of send_recover_req
+        tiks_no_simp.ivy: line 123: implementation of send_recover_resp
+        tiks_no_simp.ivy: line 59: implementation of send_store
+        tiks_no_simp.ivy: line 95: implementation of store_success
+
+    The following action monitors are present:
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 36: monitor of nonce.next
+
+    The following initializers are present:
+        tiks_no_simp.ivy: line 43: init[after62]
+
+    Initialization must establish the invariant
+        tiks_no_simp.ivy: line 218: invar63 ... PASS
+        tiks_no_simp.ivy: line 219: safety ... PASS
+        tiks_no_simp.ivy: line 220: invar64 ... PASS
+        tiks_no_simp.ivy: line 221: invar65 ... PASS
+        tiks_no_simp.ivy: line 222: invar66 ... PASS
+        tiks_no_simp.ivy: line 223: invar67 ... PASS
+        tiks_no_simp.ivy: line 224: invar68 ... PASS
+        tiks_no_simp.ivy: line 225: invar69 ... PASS
+        tiks_no_simp.ivy: line 226: invar70 ... PASS
+        tiks_no_simp.ivy: line 227: invar71 ... PASS
+
+    Any assertions in initializers must be checked ... PASS
+
+    The following set of external actions must preserve the invariant:
+        (internal) ext:node_crash
+            tiks_no_simp.ivy: line 218: invar63 ... PASS
+            tiks_no_simp.ivy: line 219: safety ... PASS
+            tiks_no_simp.ivy: line 220: invar64 ... PASS
+            tiks_no_simp.ivy: line 221: invar65 ... PASS
+            tiks_no_simp.ivy: line 222: invar66 ... PASS
+            tiks_no_simp.ivy: line 223: invar67 ... PASS
+            tiks_no_simp.ivy: line 224: invar68 ... PASS
+            tiks_no_simp.ivy: line 225: invar69 ... PASS
+            tiks_no_simp.ivy: line 226: invar70 ... PASS
+            tiks_no_simp.ivy: line 227: invar71 ... PASS
+        (internal) ext:node_recover
+            tiks_no_simp.ivy: line 218: invar63 ... PASS
+            tiks_no_simp.ivy: line 219: safety ... PASS
+            tiks_no_simp.ivy: line 220: invar64 ... PASS
+            tiks_no_simp.ivy: line 221: invar65 ... FAIL
+searching for a small model... done
+[
+    index.succ(0,0) = false
+    index.succ(0,1) = false
+    index.succ(1,0) = false
+    index.succ(1,1) = false
+    0:index = 0
+    n_nonce(0) = 0
+    n_nonce(1) = 0
+    @D = 1
+    m_recover_req(0,0) = true
+    m_recover_req(1,0) = true
+    m_recover_resp(0,0,0,0,0,0) = true
+    m_recover_resp(0,0,0,0,0,1) = true
+    m_recover_resp(0,0,0,0,1,0) = true
+    m_recover_resp(0,0,0,0,1,1) = true
+    m_recover_resp(0,0,1,0,0,0) = true
+    m_recover_resp(0,0,1,0,0,1) = true
+    m_recover_resp(0,0,1,0,1,0) = true
+    m_recover_resp(1,0,0,0,0,0) = true
+    m_recover_resp(1,0,0,0,0,1) = true
+    m_recover_resp(1,0,0,0,1,0) = true
+    m_recover_resp(1,0,0,0,1,1) = true
+    m_recover_resp(1,0,1,0,0,0) = true
+    m_recover_resp(1,0,1,0,0,1) = true
+    m_recover_resp(1,0,1,0,1,0) = true
+    m_recover_resp(0,0,1,0,1,1) = false
+    m_recover_resp(1,0,1,0,1,1) = false
+    n_committed_index(0) = 0
+    n_committed_index(1) = 0
+    recovering(1) = true
+    recovering(0) = false
+    member(0,0) = true
+    member(1,0) = false
+    0:nonce < 0 = false
+    nonce.succ(0,0) = false
+    0:nonce = 0
+    @S = 1
+    @I = 1
+    m_confirm_store_resp(0,0,0,0,0) = false
+    m_confirm_store_resp(0,0,0,0,1) = false
+    m_confirm_store_resp(0,0,1,0,0) = false
+    m_confirm_store_resp(0,0,1,0,1) = false
+    m_confirm_store_resp(1,0,0,0,0) = false
+    m_confirm_store_resp(1,0,0,0,1) = false
+    m_confirm_store_resp(1,0,1,0,0) = false
+    m_confirm_store_resp(1,0,1,0,1) = false
+    crash(1) = true
+    crash(0) = false
+    0:index < 1 = true
+    0:index < 0 = false
+    1:index < 0 = false
+    1:index < 1 = false
+    n_tiks_states(0,0,0) = true
+    n_tiks_states(0,0,1) = true
+    n_tiks_states(0,1,0) = true
+    n_tiks_states(0,1,1) = true
+    n_tiks_states(1,0,0) = true
+    n_tiks_states(1,0,1) = true
+    n_tiks_states(1,1,0) = true
+    n_tiks_states(1,1,1) = true
+    n_recovered_index(0) = 1
+    n_recovered_index(1) = 1
+    m_store_req(0,0,0) = false
+    m_store_req(0,0,1) = false
+    m_store_req(1,0,0) = false
+    m_store_req(1,0,1) = false
+    m_store_resp(1,0,1,0,1) = true
+    m_store_resp(0,0,0,0,0) = false
+    m_store_resp(0,0,0,0,1) = false
+    m_store_resp(0,0,1,0,0) = false
+    m_store_resp(0,0,1,0,1) = false
+    m_store_resp(1,0,0,0,0) = false
+    m_store_resp(1,0,0,0,1) = false
+    m_store_resp(1,0,1,0,0) = false
+]
+call node_recover
+
+{
+    [
+        fml:n = 1
+        fml:retrieved_i = 0
+        fml:q = 0
+    ]
+tiks_no_simp.ivy: line 131: 
+    assume crash(fml:n) & recovering(fml:n)
+
+tiks_no_simp.ivy: line 132: 
+    assume m_recover_req(fml:n,n_nonce(fml:n))
+
+tiks_no_simp.ivy: line 133: 
+    assume ~member(fml:n,fml:q)
+
+tiks_no_simp.ivy: line 134: 
+    assume member(N,fml:q) -> ~crash(N)
+
+tiks_no_simp.ivy: line 136: 
+    assume forall N. member(N,fml:q) -> (exists I. m_recover_resp(N,n_nonce(N),fml:n,n_nonce(fml:n),N,I))
+
+tiks_no_simp.ivy: line 138: 
+    assume forall S,I. m_recover_resp(S,n_nonce(S),fml:n,n_nonce(fml:n),fml:n,I) -> I <= fml:retrieved_i
+
+tiks_no_simp.ivy: line 139: 
+    assume exists N. member(N,fml:q) & m_recover_resp(N,n_nonce(N),fml:n,n_nonce(fml:n),fml:n,fml:retrieved_i)
+
+tiks_no_simp.ivy: line 141: 
+    assert n_committed_index(fml:n) <= fml:retrieved_i
+
+tiks_no_simp.ivy: line 142: 
+    n_recovered_index(fml:n) := fml:retrieved_i
+
+    [
+        n_recovered_index(1) = 0
+    ]
+tiks_no_simp.ivy: line 145: 
+    n_tiks_states(fml:n,N,I) := false
+
+    [
+        n_tiks_states(1,0,0) = false
+        n_tiks_states(1,0,1) = false
+        n_tiks_states(1,1,0) = false
+        n_tiks_states(1,1,1) = false
+    ]
+tiks_no_simp.ivy: line 146: 
+    n_tiks_states(fml:n,N,I) := (true if (exists N0. member(N0,fml:q) & m_recover_resp(N0,n_nonce(N0),fml:n,n_nonce(fml:n),N,I)) else n_tiks_states(fml:n,N,I))
+
+tiks_no_simp.ivy: line 147: 
+    n_tiks_states(fml:n,fml:n,I) := (true if (I <= fml:retrieved_i) else n_tiks_states(fml:n,fml:n,I))
+
+    [
+        n_tiks_states(1,1,0) = true
+    ]
+tiks_no_simp.ivy: line 148: 
+    call rec_send_store(fml:n)
+    {
+        [
+            fml:n_a = 1
+        ]
+tiks_no_simp.ivy: line 164: 
+        assert crash(fml:n) & recovering(fml:n)
+
+tiks_no_simp.ivy: line 166: 
+        loc:i := n_recovered_index(fml:n)
+
+        [
+            loc:i = 0
+        ]
+tiks_no_simp.ivy: line 167: 
+        n_tiks_states(fml:n,fml:n,loc:i) := true
+
+tiks_no_simp.ivy: line 168: 
+        m_store_req(fml:n,n_nonce(fml:n),loc:i) := true
+
+        [
+            m_store_req(1,0,0) = true
+        ]
+tiks_no_simp.ivy: line 169: 
+        m_store_resp(fml:n,n_nonce(fml:n),fml:n,n_nonce(fml:n),loc:i) := true
+
+        [
+            m_store_resp(1,0,1,0,0) = true
+        ]
+    }
+
+}

@@ -1,0 +1,257 @@
+Isolate index.iso:
+
+    The following definitions are used:
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 53: index.impl.def8
+
+    The following properties are to be checked:
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 32: index.spec.prop3 ... PASS
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 4: index.spec.transitivity ... PASS
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 5: index.spec.antisymmetry ... PASS
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 6: index.spec.totality ... PASS
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 11: index.spec.prop1 ... PASS
+
+Isolate nonce.iso:
+
+    The following definitions are used:
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 53: nonce.impl.def8
+
+    The following properties are to be checked:
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 32: nonce.spec.prop3 ... PASS
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 4: nonce.spec.transitivity ... PASS
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 5: nonce.spec.antisymmetry ... PASS
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 6: nonce.spec.totality ... PASS
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 11: nonce.spec.prop1 ... PASS
+
+    The following action implementations are present:
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 56: implementation of nonce.next
+
+    The following action monitors are present:
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 36: monitor of nonce.next
+
+    The following program assertions are treated as guarantees:
+        in action nonce.next when called from the environment:
+            /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 37: guarantee ... PASS
+            /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 38: guarantee ... PASS
+
+Isolate this:
+
+    The following properties are assumed as axioms:
+        tiks.ivy: line 11: quorum_intersection
+
+    The following properties are to be checked:
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 32: index.spec.prop3  [assumed]
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 4: index.spec.transitivity  [assumed]
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 5: index.spec.antisymmetry  [assumed]
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 6: index.spec.totality  [assumed]
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 11: index.spec.prop1  [assumed]
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 32: nonce.spec.prop3  [assumed]
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 4: nonce.spec.transitivity  [assumed]
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 5: nonce.spec.antisymmetry  [assumed]
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 6: nonce.spec.totality  [assumed]
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 11: nonce.spec.prop1  [assumed]
+
+    The inductive invariant consists of the following conjectures:
+        tiks.ivy: line 198: invar63
+        tiks.ivy: line 200: safety
+        tiks.ivy: line 202: invar64
+        tiks.ivy: line 203: invar65
+        tiks.ivy: line 204: invar66
+        tiks.ivy: line 205: invar67
+        tiks.ivy: line 206: invar68
+        tiks.ivy: line 207: invar69
+        tiks.ivy: line 208: invar70
+        tiks.ivy: line 209: invar71
+
+    The following action implementations are present:
+        tiks.ivy: line 98: implementation of node_crash
+        tiks.ivy: line 109: implementation of node_recover
+        tiks.ivy: line 126: implementation of nonce_increase
+        tiks.ivy: line 148: implementation of rec_send_confirm_store
+        tiks.ivy: line 137: implementation of rec_send_store
+        tiks.ivy: line 164: implementation of rec_store_success
+        tiks.ivy: line 79: implementation of reply_confirm_store
+        tiks.ivy: line 59: implementation of reply_store
+        tiks.ivy: line 67: implementation of send_confirm_store
+        tiks.ivy: line 51: implementation of send_store
+        tiks.ivy: line 87: implementation of store_success
+
+    The following action monitors are present:
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 36: monitor of nonce.next
+
+    The following initializers are present:
+        tiks.ivy: line 37: init[after62]
+
+    Initialization must establish the invariant
+        tiks.ivy: line 198: invar63 ... PASS
+        tiks.ivy: line 200: safety ... PASS
+        tiks.ivy: line 202: invar64 ... PASS
+        tiks.ivy: line 203: invar65 ... PASS
+        tiks.ivy: line 204: invar66 ... PASS
+        tiks.ivy: line 205: invar67 ... PASS
+        tiks.ivy: line 206: invar68 ... PASS
+        tiks.ivy: line 207: invar69 ... PASS
+        tiks.ivy: line 208: invar70 ... PASS
+        tiks.ivy: line 209: invar71 ... PASS
+
+    Any assertions in initializers must be checked ... PASS
+
+    The following set of external actions must preserve the invariant:
+        (internal) ext:node_crash
+            tiks.ivy: line 198: invar63 ... PASS
+            tiks.ivy: line 200: safety ... PASS
+            tiks.ivy: line 202: invar64 ... PASS
+            tiks.ivy: line 203: invar65 ... PASS
+            tiks.ivy: line 204: invar66 ... PASS
+            tiks.ivy: line 205: invar67 ... PASS
+            tiks.ivy: line 206: invar68 ... PASS
+            tiks.ivy: line 207: invar69 ... PASS
+            tiks.ivy: line 208: invar70 ... PASS
+            tiks.ivy: line 209: invar71 ... PASS
+        (internal) ext:node_recover
+            tiks.ivy: line 198: invar63 ... PASS
+            tiks.ivy: line 200: safety ... PASS
+            tiks.ivy: line 202: invar64 ... PASS
+            tiks.ivy: line 203: invar65 ... PASS
+            tiks.ivy: line 204: invar66 ... PASS
+            tiks.ivy: line 205: invar67 ... PASS
+            tiks.ivy: line 206: invar68 ... PASS
+            tiks.ivy: line 207: invar69 ... PASS
+            tiks.ivy: line 208: invar70 ... PASS
+            tiks.ivy: line 209: invar71 ... PASS
+        (internal) ext:rec_send_confirm_store
+            tiks.ivy: line 198: invar63 ... PASS
+            tiks.ivy: line 200: safety ... PASS
+            tiks.ivy: line 202: invar64 ... PASS
+            tiks.ivy: line 203: invar65 ... PASS
+            tiks.ivy: line 204: invar66 ... PASS
+            tiks.ivy: line 205: invar67 ... PASS
+            tiks.ivy: line 206: invar68 ... PASS
+            tiks.ivy: line 207: invar69 ... PASS
+            tiks.ivy: line 208: invar70 ... PASS
+            tiks.ivy: line 209: invar71 ... PASS
+        (internal) ext:rec_store_success
+            tiks.ivy: line 198: invar63 ... PASS
+            tiks.ivy: line 200: safety ... PASS
+            tiks.ivy: line 202: invar64 ... PASS
+            tiks.ivy: line 203: invar65 ... PASS
+            tiks.ivy: line 204: invar66 ... PASS
+            tiks.ivy: line 205: invar67 ... PASS
+            tiks.ivy: line 206: invar68 ... PASS
+            tiks.ivy: line 207: invar69 ... PASS
+            tiks.ivy: line 208: invar70 ... PASS
+            tiks.ivy: line 209: invar71 ... PASS
+        (internal) ext:reply_confirm_store
+            tiks.ivy: line 198: invar63 ... PASS
+            tiks.ivy: line 200: safety ... PASS
+            tiks.ivy: line 202: invar64 ... PASS
+            tiks.ivy: line 203: invar65 ... PASS
+            tiks.ivy: line 204: invar66 ... PASS
+            tiks.ivy: line 205: invar67 ... PASS
+            tiks.ivy: line 206: invar68 ... PASS
+            tiks.ivy: line 207: invar69 ... PASS
+            tiks.ivy: line 208: invar70 ... PASS
+            tiks.ivy: line 209: invar71 ... PASS
+        (internal) ext:reply_store
+            tiks.ivy: line 198: invar63 ... PASS
+            tiks.ivy: line 200: safety ... PASS
+            tiks.ivy: line 202: invar64 ... PASS
+            tiks.ivy: line 203: invar65 ... PASS
+            tiks.ivy: line 204: invar66 ... PASS
+            tiks.ivy: line 205: invar67 ... PASS
+            tiks.ivy: line 206: invar68 ... PASS
+            tiks.ivy: line 207: invar69 ... PASS
+            tiks.ivy: line 208: invar70 ... PASS
+            tiks.ivy: line 209: invar71 ... PASS
+        (internal) ext:send_confirm_store
+            tiks.ivy: line 198: invar63 ... PASS
+            tiks.ivy: line 200: safety ... PASS
+            tiks.ivy: line 202: invar64 ... PASS
+            tiks.ivy: line 203: invar65 ... PASS
+            tiks.ivy: line 204: invar66 ... PASS
+            tiks.ivy: line 205: invar67 ... PASS
+            tiks.ivy: line 206: invar68 ... PASS
+            tiks.ivy: line 207: invar69 ... PASS
+            tiks.ivy: line 208: invar70 ... PASS
+            tiks.ivy: line 209: invar71 ... PASS
+        (internal) ext:send_store
+            tiks.ivy: line 198: invar63 ... PASS
+            tiks.ivy: line 200: safety ... PASS
+            tiks.ivy: line 202: invar64 ... PASS
+            tiks.ivy: line 203: invar65 ... PASS
+            tiks.ivy: line 204: invar66 ... PASS
+            tiks.ivy: line 205: invar67 ... PASS
+            tiks.ivy: line 206: invar68 ... PASS
+            tiks.ivy: line 207: invar69 ... PASS
+            tiks.ivy: line 208: invar70 ... PASS
+            tiks.ivy: line 209: invar71 ... PASS
+        (internal) ext:store_success
+            tiks.ivy: line 198: invar63 ... PASS
+            tiks.ivy: line 200: safety ... PASS
+            tiks.ivy: line 202: invar64 ... PASS
+            tiks.ivy: line 203: invar65 ... PASS
+            tiks.ivy: line 204: invar66 ... PASS
+            tiks.ivy: line 205: invar67 ... PASS
+            tiks.ivy: line 206: invar68 ... PASS
+            tiks.ivy: line 207: invar69 ... PASS
+            tiks.ivy: line 208: invar70 ... PASS
+            tiks.ivy: line 209: invar71 ... PASS
+
+    The following program assertions are treated as assumptions:
+        in action rec_send_confirm_store when called from the environment:
+            tiks.ivy: line 149: assumption
+            tiks.ivy: line 150: assumption
+            tiks.ivy: line 153: assumption
+            tiks.ivy: line 154: assumption
+            tiks.ivy: line 155: assumption
+            tiks.ivy: line 157: assumption
+        in action nonce.next when called from nonce_increase:
+            /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 37: assumption
+            /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 38: assumption
+        in action node_recover when called from the environment:
+            tiks.ivy: line 110: assumption
+            tiks.ivy: line 111: assumption
+            tiks.ivy: line 112: assumption
+            tiks.ivy: line 115: assumption
+            tiks.ivy: line 116: assumption
+        in action store_success when called from the environment:
+            tiks.ivy: line 88: assumption
+            tiks.ivy: line 89: assumption
+            tiks.ivy: line 90: assumption
+            tiks.ivy: line 91: assumption
+            tiks.ivy: line 93: assumption
+        in action rec_store_success when called from the environment:
+            tiks.ivy: line 165: assumption
+            tiks.ivy: line 166: assumption
+            tiks.ivy: line 167: assumption
+            tiks.ivy: line 171: assumption
+            tiks.ivy: line 172: assumption
+            tiks.ivy: line 175: assumption
+        in action reply_store when called from the environment:
+            tiks.ivy: line 60: assumption
+            tiks.ivy: line 61: assumption
+            tiks.ivy: line 62: assumption
+        in action node_crash when called from the environment:
+            tiks.ivy: line 99: assumption
+        in action send_confirm_store when called from the environment:
+            tiks.ivy: line 68: assumption
+            tiks.ivy: line 69: assumption
+            tiks.ivy: line 70: assumption
+            tiks.ivy: line 71: assumption
+            tiks.ivy: line 72: assumption
+            tiks.ivy: line 74: assumption
+        in action reply_confirm_store when called from the environment:
+            tiks.ivy: line 80: assumption
+            tiks.ivy: line 81: assumption
+            tiks.ivy: line 82: assumption
+            tiks.ivy: line 83: assumption
+        in action send_store when called from the environment:
+            tiks.ivy: line 52: assumption
+            tiks.ivy: line 53: assumption
+
+    The following program assertions are treated as guarantees:
+        in action node_recover when called from the environment,the environment:
+            tiks.ivy: line 119: guarantee ... PASS
+        in action rec_send_store when called from node_recover:
+            tiks.ivy: line 138: guarantee ... PASS
+
+OK

@@ -1,0 +1,209 @@
+#lang ivy1.7
+
+include order
+type node
+type quorum
+instance index : unbounded_sequence
+instance nonce : unbounded_sequence
+
+# Quorum definition
+relation member(N:node, Q:quorum)
+axiom [quorum_intersection] forall Q1:quorum, Q2:quorum. exists N:node. member(N, Q1) & member(N, Q2)
+
+# Whether the node is crashed/recovering
+relation crash(N:node)
+relation recovering(N:node)
+
+# Unused
+function alive(Q:quorum):bool
+definition alive(Q) = ~(exists N0:node. member(N0, Q) & crash(N0))
+
+# The prefix "n" means "node's internal states"
+relation n_tiks_states(N0:node, N:node, I:index)
+function n_committed_index(N:node):index
+function n_recovered_index(N:node):index
+function n_nonce(N:node):nonce
+
+#### The prefix "m" means "messages in the network"
+# Sender, sender's nonce, index
+relation m_store_req(S:node, NO:nonce, I:index)
+# Sender, sender's nonce, destination, destination's nonce, index
+relation m_store_resp(S:node, SNO:nonce, D:node, DNO:nonce, I:index)
+# Sender, sender's nonce, index
+relation m_confirm_store_req(S:node, NO:nonce, I:index)
+# Sender, sender's nonce, destination, destination's nonce, index
+relation m_confirm_store_resp(S:node, SNO:nonce, D:node, DNO:nonce, I:index)
+
+after init {
+    n_tiks_states(N0, N, I) := false;
+    n_tiks_states(N0, N, 0) := true;
+    n_committed_index(N) := 0;
+    n_recovered_index(N) := 0;
+    n_nonce(N) := 0;
+    m_store_req(S, NO, I) := false;
+    m_store_resp(S, SNO, D, DNO, I) := false;
+    m_confirm_store_req(S, NO, I) := false;
+    m_confirm_store_resp(S, SNO, D, DNO, I) := false;
+    crash(N) := false;
+    recovering(N) := false;
+}
+
+action send_store(n:node, i:index) = {
+    require ~crash(n);
+    require i > n_committed_index(n);
+    n_tiks_states(n, n, i) := true;
+    m_store_req(n, n_nonce(n), i) := true;
+    m_store_resp(n, n_nonce(n), n, n_nonce(n), i) := true;
+}
+
+action reply_store(n0:node, n:node, i:index) = {
+    require ~crash(n0);
+    require exists NO:nonce. m_store_req(n, NO, i);
+    require n0 ~= n;
+    n_tiks_states(n0, n, I) := true if I <= i else n_tiks_states(n0, n, I);
+    m_store_resp(n0, n_nonce(n0), n, n_nonce(n), i) := true;
+}
+
+action send_confirm_store(n:node, i:index, q:quorum) = {
+    require ~crash(n);
+    require n_tiks_states(n, n, i);
+    require i > n_committed_index(n);
+    require m_store_req(n, n_nonce(n), i);
+    require m_store_resp(n, n_nonce(n), n, n_nonce(n), i);
+    # Pass the first phase
+    require member(N, q) -> m_store_resp(N, n_nonce(N), n, n_nonce(n), i);
+    m_confirm_store_req(n, n_nonce(n), i) := true;
+    m_confirm_store_resp(n, n_nonce(n), n, n_nonce(n), i) := true;
+}
+
+action reply_confirm_store(n0:node, n:node, i:index) = {
+    require ~crash(n);
+    require exists NO:nonce. m_store_req(n, NO, i) & m_confirm_store_req(n, NO, i);
+    require m_store_resp(n0, n_nonce(n0), n, n_nonce(n), i);
+    require n0 ~= n;
+    m_confirm_store_resp(n0, n_nonce(n0), n, n_nonce(n), i) := true if n_tiks_states(n0, n, i) else m_confirm_store_resp(n0, n_nonce(n0), n, n_nonce(n), i);
+}
+
+action store_success(n:node, i:index, q:quorum) = {
+    require ~crash(n);
+    require i > n_committed_index(n);
+    require n_tiks_states(n, n, i);
+    require m_store_req(n, n_nonce(n), i) & m_confirm_store_req(n, n_nonce(n), i);
+    # Pass the first and second phase
+    require member(N, q) -> m_confirm_store_resp(N, n_nonce(N), n, n_nonce(n), i) & m_store_resp(N, n_nonce(N), n, n_nonce(n), i);
+    n_committed_index(n) := i;
+    n_recovered_index(n) := i;
+}
+
+action node_crash(n:node) = {
+    require ~crash(n);
+    crash(n) := true;
+    if exists Q:quorum. forall N:node. member(N, Q) -> crash(N) {
+        crash(n) := false;
+    } else {
+       
+    }
+}
+
+action node_recover(n:node, q:quorum, retrieved_i:index) = {
+    require crash(n);
+    require ~member(n, q);
+    require member(N, q) -> ~crash(N);
+
+    require exists N:node. n_tiks_states(N, n, retrieved_i) & member(N, q);
+    require forall N:node, I:index. member(N, q) & n_tiks_states(N, n, I) -> (I <= retrieved_i);
+
+    # Check rollback prevention
+    ensure n_committed_index(n) <= retrieved_i;
+    n_recovered_index(n) := retrieved_i;
+
+    # Reconstruct
+    n_tiks_states(n, N, I) := false;
+    n_tiks_states(n, N, I) := true if (exists N0:node. member(N0, q) & n_tiks_states(N0, N, I)) else n_tiks_states(n, N, I);
+
+    call nonce_increase(n);
+    call rec_send_store(n);
+}
+
+action nonce_increase(n:node) = {
+    n_nonce(n) := n_nonce(n).next;
+    m_store_req(n, n_nonce(n), I) := false;
+    m_store_resp(n, n_nonce(n), D, DNO, I) := false;
+    m_store_resp(S, SNO, n, n_nonce(n), I) := false;
+    m_confirm_store_req(n, n_nonce(n), I) := false;
+    m_confirm_store_resp(S, SNO, n, n_nonce(n), I) := false;
+    m_confirm_store_resp(n, n_nonce(n), D, DNO, I) := false;
+}
+
+action rec_send_store(n:node) = {
+    require crash(n);
+    var i:index;
+    i := n_recovered_index(n);
+    n_tiks_states(n, n, i) := true;
+    m_store_req(n, n_nonce(n), i) := true;
+    m_store_resp(n, n_nonce(n), n, n_nonce(n), i) := true;
+    recovering(n) := true;
+}
+
+action rec_send_confirm_store(n:node, q:quorum) = {
+    require crash(n) & recovering(n);
+    require ~member(n, q);
+    var i:index;
+    i := n_recovered_index(n);
+    require n_tiks_states(n, n, i);
+    require m_store_req(n, n_nonce(n), i);
+    require m_store_resp(n, n_nonce(n), n, n_nonce(n), i);
+    # Pass the first phase
+    require member(N, q) -> m_store_resp(N, n_nonce(N), n, n_nonce(n), i);
+    m_confirm_store_req(n, n_nonce(n), i) := true;
+    m_confirm_store_resp(n, n_nonce(n), n, n_nonce(n), i) := true;
+}
+
+# Recovery finishes
+action rec_store_success(n:node, i:index, q:quorum) = {
+    require crash(n) & recovering(n);
+    require ~member(n, q);
+    require member(N, q) -> ~crash(N);
+
+    var i:index;
+    i := n_recovered_index(n);
+    require n_tiks_states(n, n, i);
+    require m_store_req(n, n_nonce(n), i) & m_confirm_store_req(n, n_nonce(n), i);
+    # Pass the first and second phase
+    require member(N, q) -> m_confirm_store_resp(N, n_nonce(N), n, n_nonce(n), i) & m_store_resp(N, n_nonce(N), n, n_nonce(n), i);
+    n_committed_index(n) := i;
+
+    # Finish the recovery
+    crash(n) := false;
+    recovering(n) := false;
+}
+
+export send_store
+export reply_store
+export send_confirm_store
+export reply_confirm_store
+export store_success
+export node_recover
+export node_crash
+
+export rec_store_success
+export rec_send_confirm_store
+
+
+# Crash
+invariant ~(exists Q:quorum. forall N:node. member(N, Q) -> crash(N)) # Correct
+# invariant forall Q:quorum. exists N:node. ~crash(N) # Newer one
+
+invariant [safety] forall N:node, Q:quorum. exists N1:node. ~(exists N0:node. member(N0, Q) & crash(N0)) ->  member(N1, Q) & n_tiks_states(N1, N, n_committed_index(N))
+
+invariant m_confirm_store_resp(S, n_nonce(S), D, n_nonce(D), I) -> m_store_resp(S, n_nonce(S), D, n_nonce(D), I)
+invariant m_store_resp(S, n_nonce(S), D, n_nonce(D), I) -> n_tiks_states(S, D, I)
+
+invariant n_recovered_index(N) >= n_committed_index(N)
+
+invariant forall I:index, N:node. I = n_committed_index(N) -> n_tiks_states(N, N, I)
+
+invariant recovering(N) -> crash(N)
+invariant recovering(N) & D ~= N -> ~m_store_resp(N, n_nonce(N), D, n_nonce(D), I)
+invariant recovering(N) & I ~= n_recovered_index(N) -> ~m_store_resp(N, n_nonce(N), N, n_nonce(N), I)
+invariant recovering(N) & D ~= N -> ~m_confirm_store_resp(N, n_nonce(N), D, n_nonce(D), I)

@@ -1,0 +1,246 @@
+Isolate index.iso:
+
+    The following definitions are used:
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 53: index.impl.def8
+
+    The following properties are to be checked:
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 32: index.spec.prop3 ... PASS
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 4: index.spec.transitivity ... PASS
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 5: index.spec.antisymmetry ... PASS
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 6: index.spec.totality ... PASS
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 11: index.spec.prop1 ... PASS
+
+Isolate nonce.iso:
+
+    The following definitions are used:
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 53: nonce.impl.def8
+
+    The following properties are to be checked:
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 32: nonce.spec.prop3 ... PASS
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 4: nonce.spec.transitivity ... PASS
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 5: nonce.spec.antisymmetry ... PASS
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 6: nonce.spec.totality ... PASS
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 11: nonce.spec.prop1 ... PASS
+
+    The following action implementations are present:
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 56: implementation of nonce.next
+
+    The following action monitors are present:
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 36: monitor of nonce.next
+
+    The following program assertions are treated as guarantees:
+        in action nonce.next when called from the environment:
+            /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 37: guarantee ... PASS
+            /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 38: guarantee ... PASS
+
+Isolate this:
+
+    The following properties are assumed as axioms:
+        tiks_no_simp_2.ivy: line 11: quorum_intersection
+
+    The following properties are to be checked:
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 32: index.spec.prop3  [assumed]
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 4: index.spec.transitivity  [assumed]
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 5: index.spec.antisymmetry  [assumed]
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 6: index.spec.totality  [assumed]
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 11: index.spec.prop1  [assumed]
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 32: nonce.spec.prop3  [assumed]
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 4: nonce.spec.transitivity  [assumed]
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 5: nonce.spec.antisymmetry  [assumed]
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 6: nonce.spec.totality  [assumed]
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 11: nonce.spec.prop1  [assumed]
+
+    The inductive invariant consists of the following conjectures:
+        tiks_no_simp_2.ivy: line 194: invar63
+        tiks_no_simp_2.ivy: line 197: safety
+        tiks_no_simp_2.ivy: line 199: invar64
+        tiks_no_simp_2.ivy: line 200: invar65
+        tiks_no_simp_2.ivy: line 202: invar66
+        tiks_no_simp_2.ivy: line 204: invar67
+        tiks_no_simp_2.ivy: line 206: invar68
+        tiks_no_simp_2.ivy: line 207: invar69
+        tiks_no_simp_2.ivy: line 208: invar70
+        tiks_no_simp_2.ivy: line 209: invar71
+
+    The following action implementations are present:
+        tiks_no_simp_2.ivy: line 98: implementation of node_crash
+        tiks_no_simp_2.ivy: line 108: implementation of node_recover
+        tiks_no_simp_2.ivy: line 128: implementation of nonce_increase
+        tiks_no_simp_2.ivy: line 148: implementation of rec_send_confirm_store
+        tiks_no_simp_2.ivy: line 138: implementation of rec_send_store
+        tiks_no_simp_2.ivy: line 163: implementation of rec_store_success
+        tiks_no_simp_2.ivy: line 79: implementation of reply_confirm_store
+        tiks_no_simp_2.ivy: line 59: implementation of reply_store
+        tiks_no_simp_2.ivy: line 67: implementation of send_confirm_store
+        tiks_no_simp_2.ivy: line 51: implementation of send_store
+        tiks_no_simp_2.ivy: line 87: implementation of store_success
+
+    The following action monitors are present:
+        /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.23-py2.7.egg/ivy/include/1.7/order.ivy: line 36: monitor of nonce.next
+
+    The following initializers are present:
+        tiks_no_simp_2.ivy: line 37: init[after62]
+
+    Initialization must establish the invariant
+        tiks_no_simp_2.ivy: line 194: invar63 ... PASS
+        tiks_no_simp_2.ivy: line 197: safety ... PASS
+        tiks_no_simp_2.ivy: line 199: invar64 ... PASS
+        tiks_no_simp_2.ivy: line 200: invar65 ... PASS
+        tiks_no_simp_2.ivy: line 202: invar66 ... PASS
+        tiks_no_simp_2.ivy: line 204: invar67 ... PASS
+        tiks_no_simp_2.ivy: line 206: invar68 ... PASS
+        tiks_no_simp_2.ivy: line 207: invar69 ... PASS
+        tiks_no_simp_2.ivy: line 208: invar70 ... PASS
+        tiks_no_simp_2.ivy: line 209: invar71 ... PASS
+
+    Any assertions in initializers must be checked ... PASS
+
+    The following set of external actions must preserve the invariant:
+        (internal) ext:node_crash
+            tiks_no_simp_2.ivy: line 194: invar63 ... PASS
+            tiks_no_simp_2.ivy: line 197: safety ... PASS
+            tiks_no_simp_2.ivy: line 199: invar64 ... PASS
+            tiks_no_simp_2.ivy: line 200: invar65 ... PASS
+            tiks_no_simp_2.ivy: line 202: invar66 ... PASS
+            tiks_no_simp_2.ivy: line 204: invar67 ... PASS
+            tiks_no_simp_2.ivy: line 206: invar68 ... PASS
+            tiks_no_simp_2.ivy: line 207: invar69 ... PASS
+            tiks_no_simp_2.ivy: line 208: invar70 ... PASS
+            tiks_no_simp_2.ivy: line 209: invar71 ... PASS
+        (internal) ext:node_recover
+            tiks_no_simp_2.ivy: line 194: invar63 ... PASS
+            tiks_no_simp_2.ivy: line 197: safety ... PASS
+            tiks_no_simp_2.ivy: line 199: invar64 ... PASS
+            tiks_no_simp_2.ivy: line 200: invar65 ... PASS
+            tiks_no_simp_2.ivy: line 202: invar66 ... PASS
+            tiks_no_simp_2.ivy: line 204: invar67 ... PASS
+            tiks_no_simp_2.ivy: line 206: invar68 ... PASS
+            tiks_no_simp_2.ivy: line 207: invar69 ... PASS
+            tiks_no_simp_2.ivy: line 208: invar70 ... PASS
+            tiks_no_simp_2.ivy: line 209: invar71 ... PASS
+        (internal) ext:rec_send_confirm_store
+            tiks_no_simp_2.ivy: line 194: invar63 ... PASS
+            tiks_no_simp_2.ivy: line 197: safety ... PASS
+            tiks_no_simp_2.ivy: line 199: invar64 ... PASS
+            tiks_no_simp_2.ivy: line 200: invar65 ... PASS
+            tiks_no_simp_2.ivy: line 202: invar66 ... PASS
+            tiks_no_simp_2.ivy: line 204: invar67 ... PASS
+            tiks_no_simp_2.ivy: line 206: invar68 ... PASS
+            tiks_no_simp_2.ivy: line 207: invar69 ... PASS
+            tiks_no_simp_2.ivy: line 208: invar70 ... PASS
+            tiks_no_simp_2.ivy: line 209: invar71 ... PASS
+        (internal) ext:rec_store_success
+            tiks_no_simp_2.ivy: line 194: invar63 ... PASS
+            tiks_no_simp_2.ivy: line 197: safety ... FAIL
+searching for a small model... done
+[
+    index.succ(0,0) = false
+    0:index = 0
+    n_nonce(0) = 0
+    n_nonce(1) = 0
+    n_nonce(2) = 0
+    m_store_resp(0,0,1,0,0) = true
+    m_store_resp(2,0,1,0,0) = true
+    m_store_resp(0,0,0,0,0) = false
+    m_store_resp(0,0,2,0,0) = false
+    m_store_resp(1,0,0,0,0) = false
+    m_store_resp(1,0,1,0,0) = false
+    m_store_resp(1,0,2,0,0) = false
+    m_store_resp(2,0,0,0,0) = false
+    m_store_resp(2,0,2,0,0) = false
+    @Q = 1
+    member(0,0) = true
+    member(0,1) = true
+    member(1,1) = true
+    member(2,0) = true
+    member(1,0) = false
+    member(2,1) = false
+    m_store_req(0,0,0) = true
+    m_store_req(1,0,0) = true
+    m_store_req(2,0,0) = true
+    0:nonce < 0 = false
+    nonce.succ(0,0) = false
+    m_confirm_store_req(0,0,0) = true
+    m_confirm_store_req(1,0,0) = true
+    m_confirm_store_req(2,0,0) = true
+    0:nonce = 0
+    @N = 2
+    n_tiks_states(0,0,0) = true
+    n_tiks_states(0,1,0) = true
+    n_tiks_states(1,0,0) = true
+    n_tiks_states(1,1,0) = true
+    n_tiks_states(2,0,0) = true
+    n_tiks_states(2,1,0) = true
+    n_tiks_states(2,2,0) = true
+    n_tiks_states(0,2,0) = false
+    n_tiks_states(1,2,0) = false
+    n_recovered_index(0) = 0
+    n_recovered_index(1) = 0
+    n_recovered_index(2) = 0
+    m_confirm_store_resp(0,0,1,0,0) = true
+    m_confirm_store_resp(2,0,1,0,0) = true
+    m_confirm_store_resp(0,0,0,0,0) = false
+    m_confirm_store_resp(0,0,2,0,0) = false
+    m_confirm_store_resp(1,0,0,0,0) = false
+    m_confirm_store_resp(1,0,1,0,0) = false
+    m_confirm_store_resp(1,0,2,0,0) = false
+    m_confirm_store_resp(2,0,0,0,0) = false
+    m_confirm_store_resp(2,0,2,0,0) = false
+    0:index < 0 = false
+    n_committed_index(0) = 0
+    n_committed_index(1) = 0
+    n_committed_index(2) = 0
+    recovering(1) = true
+    recovering(0) = false
+    recovering(2) = false
+    crash(1) = true
+    crash(0) = false
+    crash(2) = false
+]
+call rec_store_success
+
+{
+    [
+        fml:n = 1
+        fml:q = 0
+    ]
+tiks_no_simp_2.ivy: line 164: 
+    assume crash(fml:n) & recovering(fml:n)
+
+tiks_no_simp_2.ivy: line 165: 
+    assume ~member(fml:n,fml:q)
+
+tiks_no_simp_2.ivy: line 166: 
+    assume member(N,fml:q) -> ~crash(N)
+
+tiks_no_simp_2.ivy: line 169: 
+    loc:i := n_recovered_index(fml:n)
+
+    [
+        loc:i = 0
+    ]
+tiks_no_simp_2.ivy: line 170: 
+    assume n_tiks_states(fml:n,fml:n,loc:i)
+
+tiks_no_simp_2.ivy: line 171: 
+    assume m_store_req(fml:n,n_nonce(fml:n),loc:i) & m_confirm_store_req(fml:n,n_nonce(fml:n),loc:i)
+
+tiks_no_simp_2.ivy: line 173: 
+    assume member(N,fml:q) -> m_confirm_store_resp(N,n_nonce(N),fml:n,n_nonce(fml:n),loc:i) & m_store_resp(N,n_nonce(N),fml:n,n_nonce(fml:n),loc:i)
+
+tiks_no_simp_2.ivy: line 174: 
+    n_committed_index(fml:n) := loc:i
+
+tiks_no_simp_2.ivy: line 177: 
+    crash(fml:n) := false
+
+    [
+        crash(1) = false
+    ]
+tiks_no_simp_2.ivy: line 178: 
+    recovering(fml:n) := false
+
+    [
+        recovering(1) = false
+    ]
+}
